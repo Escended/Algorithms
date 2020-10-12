@@ -12,8 +12,8 @@ class DynamicArray:
         return self.size == 0
 
     def __getitem__(self, index):
-        if not -self.size <= index < self.size:
-            raise IndexError
+        # if not -self.size <= index < self.size:
+        #     raise IndexError
         return self.arr[index]
 
     def __setitem__(self, index, elem):
