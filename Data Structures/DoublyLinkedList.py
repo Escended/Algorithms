@@ -97,9 +97,9 @@ class DoublyLinkedList:
             elem (object): Any type of object to be added
         """
         if self.is_empty():
-            self.head = self.tail = Node(elem, None, None)
+            self.head = self.tail = self.Node(elem, None, None)
         else:
-            self.head.prev = Node(elem, None, self.head)
+            self.head.prev = self.Node(elem, None, self.head)
             self.head = self.head.prev
         
         self.size += 1
@@ -113,9 +113,9 @@ class DoublyLinkedList:
             elem (object): Any type of object to be added
         """
         if self.is_empty():
-            self.head = self.tail = Node(elem, None, None)
+            self.head = self.tail = self.Node(elem, None, None)
         else:
-            self.tail.nxt = Node(elem, self.tail, None)
+            self.tail.nxt = self.Node(elem, self.tail, None)
             self.tail = self.tail.nxt
 
         self.size += 1
@@ -294,7 +294,7 @@ class DoublyLinkedList:
         while trav is not None:
             sb = sb + str(trav.data)
             if trav.nxt is not None:
-                sb = sb + ', '
+                sb = sb + ' - '
 
             trav = trav.nxt
 
