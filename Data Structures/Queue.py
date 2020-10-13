@@ -4,7 +4,7 @@ from DoublyLinkedList import DoublyLinkedList
 class Queue:
     def __init__(self):
         self.queue = DoublyLinkedList()
-    
+        self.iterQueue = iter(self.queue)
 
     def size(self):
         return self.queue.size
@@ -29,7 +29,12 @@ class Queue:
 
     
     def __iter__(self):
-        return self.queue.__iter__()
+        self.iterQueue = iter(self.queue)
+        return self
+
+
+    def __next__(self):
+        return next(self.iterQueue)
 
     
     def __str__(self):

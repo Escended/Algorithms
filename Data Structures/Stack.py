@@ -9,6 +9,7 @@ class Stack:
     def __init__(self):
         """Initialise an empy ll
         """
+        self.iterStack = iter(self.Stack)
         self.list = DoublyLinkedList()
 
     
@@ -46,7 +47,12 @@ class Stack:
 
     
     def __iter__(self):
-        return self.list.__iter__()
+        self.iterStack = iter(self.stack)
+        return self
+
+
+    def __next__(self):
+        return next(self.iterStack)
 
     
     def __str__(self):
