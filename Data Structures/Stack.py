@@ -51,4 +51,3 @@ class Stack:
     
     def __str__(self):
         return self.list.__str__()
-
